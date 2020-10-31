@@ -45,23 +45,16 @@ $background-opacity: 0.5;
   }
 }
 
-* {
-  box-sizing: border-box;
-}
-
-body {
-  @include background;
-  background: $primary-color;
-  color: #fff;
-  height: 100%;
-  margin: 0px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-
-  line-height: 1.5;
+//SET TXT COLOR
+@function set_text_color($color) {
+  @if (lightness($color) > 40) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
 }
 
 //MEDIA QUERIES MEXIN
-
 @mixin mediaSm {
   @media screen and (max-width: 500px) {
     @content;
