@@ -44,3 +44,119 @@
     }
   }
 }
+
+//MENU OVELAY
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0.9;
+
+  //by default to be hidden
+  visibility: hidden;
+
+  //then we need to add the show class
+  &.show {
+    visibility: visible;
+  }
+  //menu branding, menu-branding, add the menu to branding
+  &-branding,
+  &-nav {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  &-nav {
+    margin: 0;
+    padding: 0;
+    background: darken($primary-color, 5);
+    list-style: none;
+
+    //to let it come from the top
+    transform: translate3d(0, -100%, 0);
+    @include easeOut;
+
+    //whe  the show class is apllied to the nav
+    &.show {
+      //slide in from top
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  //Branding side
+  &-branding {
+    //to target menu-branding
+
+    background: $primary-color;
+
+    //psuh it 100% up
+    transform: translate3d(0, 100%, 0);
+    @include easeOut;
+
+    //we want it to come down
+    &.show {
+      //slide in from bottom
+      transform: translate3d(0, 0, 0);
+    }
+
+    //potrait
+    .portrait {
+      width: 250px;
+      height: 250px;
+      background: url("../img/portrait.jpg");
+      border-radius: 50%;
+      border: solid 3px $secondary-color;
+    }
+  }
+
+  //nav items
+  .nav-item {
+    //we want it to be off the screen until we get show class
+    transform: translate3d(600px, 0, 0); //from left to right
+    @include easeOut;
+
+    //we want it slide in from right when the show class comes
+    &.show {
+      //slide in from bottom
+      transform: translate3d(0, 0, 0);
+    }
+
+    &.current > a {
+      color: $secondary-color;
+    }
+  }
+
+  //stylig link
+  .nav-link {
+    display: inline-block;
+    position: relative;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    font-weight: 300;
+    color: #fff;
+    text-decoration: none;
+    @include easeOut;
+
+    //hover color
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+
+//Delay each nav item slide by 0.1s
+
+@for $x from 1 through 5 {
+  //since i have 5 links
+
+  .nav-item:nth-child(#{$x}) {
+    transition-delay: $x * 0.1s;
+  }
+}
