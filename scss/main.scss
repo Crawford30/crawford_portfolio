@@ -129,7 +129,57 @@ main {
   }
 }
 
-//footer
+//========My Projects========
+
+.projects {
+  display: grid;
+
+  grid-gap: 0.7rem;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  img {
+    width: 100%;
+    border: 3px #fff solid;
+
+    &:hover {
+      opacity: 0.5;
+      border-color: $secondary-color;
+      @include easeOut;
+    }
+  }
+}
+
+//Button styles
+//doing some inheritance
+//https://youtu.be/oxTG7TVr7PQ?list=PLillGF-RfqbYoGoCjKoMOkVznV6aSXKzU&t=488
+.btn {
+  //style for both btns
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+
+  &:hover {
+    background: $secondary-color;
+    color: set-text-clor($secondary-color);
+  }
+}
+
+//Extring the btn class
+.btn-dark {
+  @extend .btn;
+  background: darken($primary-color, 50);
+  color: #fff;
+}
+
+.btn-light {
+  @extend .btn;
+
+  background: lighten($primary-color, 50);
+  color: #333;
+}
+//=======footer=========
 #main-footer {
   text-align: center;
   padding: 1rem;

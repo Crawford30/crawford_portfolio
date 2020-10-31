@@ -1,9 +1,17 @@
 //wide screen
 @include mediaXl {
+  //Projects
+  .projects {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 //desktop and laptop screen
 @include mediaLg {
+  //Projects display 3 on large screen
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 //tablets and small laptop
@@ -58,6 +66,11 @@
 
     grid-template-columns: 1fr;
   }
+
+  //Projects display 3 on medium screen
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 //smartphone
@@ -65,5 +78,10 @@
   main#home h1 {
     margin-top: 10vh;
     transform: translate3d(100%, 0, 0);
+  }
+
+  //Projects display 1 on smaall screen
+  .projects {
+    grid-template-columns: 1fr;
   }
 }
