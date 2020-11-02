@@ -206,7 +206,8 @@ main {
       background: #eece1a;
       color: #000; }
       .boxes div:hover span {
-        color: #000; }
+        color: #000;
+        font-size: 0.5rem; }
 
 .btn, .btn-dark, .btn-light {
   display: block;
@@ -280,5 +281,11 @@ main {
     main .lg-heading {
       margin-top: 1rem;
       font-size: 3rem; }
+  .boxes div {
+    font-size: 1.2rem;
+    border: 3px #fff solid;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    transition: all 0.5s ease-out; }
   .projects {
     grid-template-columns: 1fr; } }
