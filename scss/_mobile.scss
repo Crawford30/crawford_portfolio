@@ -1,26 +1,111 @@
-//wide screen
+// //wide screen
+// @include mediaXl {
+//   //Projects
+//   .projects {
+//     grid-template-columns: repeat(4, 1fr);
+//   }
+// }
+
+// //desktop and laptop screen
+// @include mediaLg {
+//   //Projects display 3 on large screen
+//   .projects {
+//     grid-template-columns: repeat(3, 1fr);
+//   }
+// }
+
+// //tablets and small laptop
+// @include mediaMd {
+//   main {
+//     align-items: center;
+//     text-align: center;
+
+//     //heading
+//     .lg-heading {
+//       line-height: 1;
+//       margin-bottom: 1rem;
+//     }
+//   }
+
+//   ul.menu-nav,
+//   div.menu-branding {
+//     float: none;
+//     width: 100%;
+//     min-height: 0;
+
+//     //the show class should come left to right
+//     &.show {
+//       transform: translate3d(0, 0, 0);
+//     }
+//   }
+
+//   .menu-nav {
+//     height: 75vh;
+//     transform: translate3d(-100%, 0, 0);
+//     font-size: 24px;
+//   }
+
+//   .menu-branding {
+//     height: 25vh;
+
+//     .portrait {
+//       background: url("../img/portrait_small.jpg");
+//       width: 150px;
+//       height: 150px;
+//     }
+//   }
+
+//   //====about ::selection
+//   .about-info {
+//     grid-template-areas:
+//       "bioimage"
+//       "bio"
+//       "job1"
+//       "job2"
+//       "job3";
+
+//     grid-template-columns: 1fr;
+//   }
+
+//   //Projects display 3 on medium screen
+//   .projects {
+//     grid-template-columns: repeat(2, 1fr);
+//   }
+// }
+
+// //smartphone
+// @include mediaSm {
+//   main#home h1 {
+//     margin-top: 10vh;
+//     transform: translate3d(100%, 0, 0);
+//   }
+
+//   //Projects display 1 on smaall screen
+//   .projects {
+//     grid-template-columns: 1fr;
+//   }
+// }
+
+// Widescreens
 @include mediaXl {
-  //Projects
   .projects {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
-//desktop and laptop screen
+// Desktops & Laptops
 @include mediaLg {
-  //Projects display 3 on large screen
   .projects {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-//tablets and small laptop
+// Tablets & Small Laptops
 @include mediaMd {
   main {
     align-items: center;
     text-align: center;
 
-    //heading
     .lg-heading {
       line-height: 1;
       margin-bottom: 1rem;
@@ -33,7 +118,6 @@
     width: 100%;
     min-height: 0;
 
-    //the show class should come left to right
     &.show {
       transform: translate3d(0, 0, 0);
     }
@@ -47,6 +131,7 @@
 
   .menu-branding {
     height: 25vh;
+    transform: translate3d(100%, 0, 0);
 
     .portrait {
       background: url("../img/portrait_small.jpg");
@@ -55,7 +140,6 @@
     }
   }
 
-  //====about ::selection
   .about-info {
     grid-template-areas:
       "bioimage"
@@ -67,20 +151,25 @@
     grid-template-columns: 1fr;
   }
 
-  //Projects display 3 on medium screen
   .projects {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-//smartphone
+// Smartphones
 @include mediaSm {
-  main#home h1 {
-    margin-top: 10vh;
-    transform: translate3d(100%, 0, 0);
+  main {
+    padding: 2rem;
+    #home h1 {
+      margin-top: 10vh;
+    }
+
+    .lg-heading {
+      margin-top: 1rem;
+      font-size: 3rem;
+    }
   }
 
-  //Projects display 1 on smaall screen
   .projects {
     grid-template-columns: 1fr;
   }
