@@ -206,8 +206,7 @@ main {
       background: #eece1a;
       color: #000; }
       .boxes div:hover span {
-        color: #000;
-        font-size: 0.5rem; }
+        color: #000; }
 
 .btn, .btn-dark, .btn-light {
   display: block;
